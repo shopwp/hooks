@@ -1,0 +1,21 @@
+{
+  "name": "@shopwp/hooks",
+  "version": "0.0.1",
+  "description": "Custom React hooks for ShopWP",
+  "module": "index.js",
+  "scripts": {},
+  "author": "ShopWP",
+  "license": "GPL-2.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shopwp/hooks.git"
+  },
+  "keywords": [
+    "wordpres",
+    "shopify",
+    "ecommerce",
+    "woocommerce"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
