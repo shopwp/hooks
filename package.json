@@ -2,8 +2,11 @@
   "name": "@shopwp/hooks",
   "version": "2.0.1",
   "description": "Custom React hooks for ShopWP",
-  "module": "index.js",
-  "scripts": {},
+  "main": "dist/shopwp-hooks.js",
+  "module": "dist/shopwp-hooks.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.babel.js"
+  },
   "author": "ShopWP",
   "license": "GPL-2.0-or-later",
   "repository": {
@@ -16,6 +19,8 @@
     "ecommerce",
     "woocommerce"
   ],
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  }
 }
