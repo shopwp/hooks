@@ -7,10 +7,6 @@ const config = {
   externals: {
     react: "React",
     "react-dom": "ReactDOM",
-    "@shopwp/utils": "@shopwp/utils",
-    "@shopwp/api": "@shopwp/api",
-    "@shopwp/components": "@shopwp/components",
-    "@shopwp/blocks": "@shopwp/blocks",
   },
   entry: "./index",
   output: {
@@ -26,18 +22,6 @@ const config = {
     alias: {
       react: path.resolve("./node_modules/react"),
       "lodash-es": "lodash",
-      "@shopwp/utils":
-        "/Users/andrew/_www/shopwp/htdocs/wp-content/plugins/shopwp-pro/npm-packages/shopwp-utils",
-      "@shopwp/api":
-        "/Users/andrew/_www/shopwp/htdocs/wp-content/plugins/shopwp-pro/npm-packages/shopwp-api",
-      "@shopwp/components":
-        "/Users/andrew/_www/shopwp/htdocs/wp-content/plugins/shopwp-pro/npm-packages/shopwp-components",
-      "@shopwp/hooks":
-        "/Users/andrew/_www/shopwp/htdocs/wp-content/plugins/shopwp-pro/npm-packages/shopwp-hooks",
-      "@shopwp/blocks":
-        "/Users/andrew/_www/shopwp/htdocs/wp-content/plugins/shopwp-pro/npm-packages/shopwp-blocks",
-      "shopwp-common":
-        "/Users/andrew/_www/shopwp/htdocs/wp-content/plugins/shopwp-pro/npm-packages/shopwp-components/common",
     },
   },
   plugins: [new ProgressBarPlugin()],

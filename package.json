@@ -2,8 +2,8 @@
   "name": "@shopwp/hooks",
   "version": "2.0.2",
   "description": "Custom React hooks for ShopWP",
-  "main": "dist/shopwp-hooks.js",
-  "module": "dist/shopwp-hooks.js",
+  "main": "dist/shopwp-api.js",
+  "module": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.babel.js"
   },
