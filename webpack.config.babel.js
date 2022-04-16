@@ -4,10 +4,6 @@ import ProgressBarPlugin from "progress-bar-webpack-plugin"
 const config = {
   mode: "production",
   devtool: "source-map",
-  externals: {
-    react: "React",
-    "react-dom": "ReactDOM",
-  },
   entry: "./index",
   output: {
     filename: "shopwp-hooks.js",
@@ -33,7 +29,14 @@ const config = {
       },
       {
         test: /\.(js|jsx)$/i,
-        exclude: /(node_modules)/,
+        exclude: [
+          /(node_modules)/,
+          path.resolve("./__tests__"),
+          path.resolve("./__mocks__"),
+          path.resolve("./test-utils"),
+          path.resolve("./tests"),
+          path.resolve("./dist"),
+        ],
         enforce: "pre",
         use: [
           {
