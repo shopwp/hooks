@@ -1,5 +1,6 @@
 import path from "path"
 import ProgressBarPlugin from "progress-bar-webpack-plugin"
+import webpack from "webpack"
 
 const config = {
   mode: "production",
@@ -20,7 +21,14 @@ const config = {
       "lodash-es": "lodash",
     },
   },
-  plugins: [new ProgressBarPlugin()],
+  plugins: [
+    new ProgressBarPlugin(),
+    new webpack.ProvidePlugin({
+      "wp.i18n": "@wordpress/i18n",
+      "wp.hooks": "@wordpress/hooks",
+      "wp.element": "@wordpress/element",
+    }),
+  ],
   module: {
     rules: [
       {
