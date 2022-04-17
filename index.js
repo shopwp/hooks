@@ -1,5 +1,3 @@
-import shopwp from "./shopwp-defaults"
-
 export {
   useAction,
   useOnClickOutside,

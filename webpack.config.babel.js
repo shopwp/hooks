@@ -19,6 +19,7 @@ const config = {
     alias: {
       react: path.resolve("./node_modules/react"),
       "lodash-es": "lodash",
+      shopwp: path.resolve("./shopwp-defaults.js"),
     },
   },
   plugins: [
@@ -27,6 +28,7 @@ const config = {
       "wp.i18n": "@wordpress/i18n",
       "wp.hooks": "@wordpress/hooks",
       "wp.element": "@wordpress/element",
+      shopwp: "shopwp",
     }),
   ],
   module: {
