@@ -56,10 +56,6 @@ const config = {
           },
         ],
       },
-      {
-        test: path.resolve("./shopwp-defaults.js"),
-        use: "exports-loader?type=commonjs&exports=shopwp",
-      },
     ],
   },
 }
