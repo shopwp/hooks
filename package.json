@@ -1,6 +1,6 @@
 {
   "name": "@shopwp/hooks",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "description": "Custom React hooks for ShopWP",
   "main": "dist/shopwp-api.js",
   "module": "index.js",
