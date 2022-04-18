@@ -29,6 +29,8 @@ const config = {
       "wp.hooks": "@wordpress/hooks",
       "wp.element": "@wordpress/element",
       shopwp: "shopwp",
+      React: "@wordpress/element",
+      ReactDOM: "@wordpress/element",
     }),
   ],
   module: {
@@ -53,7 +55,10 @@ const config = {
             loader: "babel-loader",
             options: {
               babelrcRoots: ["."],
-              presets: ["@babel/preset-env", "@babel/preset-react"],
+              presets: [
+                "@babel/preset-env",
+                ["@babel/preset-react", { runtime: "automatic" }],
+              ],
             },
           },
         ],
