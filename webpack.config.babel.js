@@ -17,7 +17,8 @@ const config = {
   resolve: {
     extensions: [".js", ".jsx"],
     alias: {
-      react: path.resolve("./node_modules/react"),
+      React: "@wordpress/element",
+      ReactDOM: "@wordpress/element",
       "lodash-es": "lodash",
       shopwp: path.resolve("./shopwp-defaults.js"),
     },
