@@ -1,6 +1,6 @@
-# React hooks for ShopWP
+# 💽 React hooks for ShopWP
 
-React hooks library for ShopWP
+A React hooks library for ShopWP
 
 ## Install
 
