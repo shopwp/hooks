@@ -1,4 +1,4 @@
-import { findPortalElement, isKeyboardEvent, isEscKey } from "Common"
+import { findPortalElement, isKeyboardEvent, isEscKey } from "@shopwp/common"
 
 function useAction(hookName, defaultVal = false) {
   const { useState, useEffect } = wp.element
