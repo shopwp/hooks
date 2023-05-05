@@ -187,6 +187,23 @@ function useFirstRender() {
   return firstUpdate.current
 }
 
+// Taken from: https://usehooks.com/useDebounce/
+function useDebounce(value, delay) {
+  const { useState, useEffect } = wp.element
+  const [debouncedValue, setDebouncedValue] = useState(value)
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value)
+    }, delay)
+
+    return () => {
+      clearTimeout(handler)
+    }
+  }, [value, delay])
+  return debouncedValue
+}
+
 export {
   useAction,
   useOnClickOutside,
@@ -194,4 +211,5 @@ export {
   useCartToggle,
   useSettings,
   useFirstRender,
+  useDebounce,
 }
