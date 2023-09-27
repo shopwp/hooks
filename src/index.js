@@ -121,7 +121,7 @@ function useCartToggle(dispatch) {
   const clickEvent = (event) => {
     var classList = event.target.classList
     var iconClicked = getClosest(event.target, ".wps-btn-cart")
-    var cartClicked = getClosest(event.target, ".shopwp-cart")
+    var cartClicked = getClosest(event.target, ".swp-cart")
 
     if (classList.contains("wps-modal-close-trigger")) {
       dispatch({ type: "TOGGLE_CART", payload: false })
