@@ -1,6 +1,6 @@
 import { findPortalElement, isKeyboardEvent, isEscKey } from "@shopwp/common"
 
-function useAction(hookName, defaultVal = false) {
+function useAction(hookName, defaultVal = null) {
   const { useState, useEffect } = wp.element
   const { hasAction, addAction } = wp.hooks
   const [data, setData] = useState(() => defaultVal)
