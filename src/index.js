@@ -1,19 +1,23 @@
 import { findPortalElement, isKeyboardEvent, isEscKey } from "@shopwp/common"
 
-function useAction(hookName, defaultVal = null) {
+function useAction(hookName, defaultVal = null, customNamespace = "") {
   const { useState, useEffect } = wp.element
   const { hasAction, addAction } = wp.hooks
   const [data, setData] = useState(() => defaultVal)
 
   useEffect(() => {
-    if (!hasAction(hookName)) {
-      addAction(hookName, "shopwp." + hookName, function (newData, extraData) {
-        if (extraData) {
-          setData([newData, extraData])
-        } else {
-          setData(newData)
+    if (!hasAction(hookName, "shopwp." + hookName + customNamespace)) {
+      addAction(
+        hookName,
+        "shopwp." + hookName + customNamespace,
+        function (newData, extraData) {
+          if (extraData) {
+            setData([newData, extraData])
+          } else {
+            setData(newData)
+          }
         }
-      })
+      )
     }
   }, [])
 
@@ -123,7 +127,7 @@ function useCartToggle(dispatch) {
     var iconClicked = getClosest(event.target, ".wps-btn-cart")
     var cartClicked = getClosest(event.target, ".swp-cart")
 
-    if (classList.contains("wps-modal-close-trigger")) {
+    if (classList.contains("swp-modal-close-trigger")) {
       dispatch({ type: "TOGGLE_CART", payload: false })
       return
     }
