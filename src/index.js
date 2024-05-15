@@ -115,6 +115,12 @@ function useCartToggle(dispatch) {
   }
 
   const escEvent = (event) => {
+    var cartElement = document.getElementById("swp-cart")
+
+    if (!cartElement.classList.contains("swp-cart-is-open")) {
+      return
+    }
+
     if (event.key === "Escape" || event.keyCode === 27) {
       setCartToggle("close")
       dispatch({ type: "TOGGLE_CART", payload: false })
@@ -126,6 +132,7 @@ function useCartToggle(dispatch) {
     var classList = event.target.classList
     var iconClicked = getClosest(event.target, ".wps-btn-cart")
     var cartClicked = getClosest(event.target, ".swp-cart")
+    var cartElement = document.getElementById("swp-cart")
 
     if (classList.contains("swp-modal-close-trigger")) {
       dispatch({ type: "TOGGLE_CART", payload: false })
@@ -138,8 +145,12 @@ function useCartToggle(dispatch) {
     }
 
     if (!cartClicked) {
-      dispatch({ type: "TOGGLE_CART", payload: false })
-      return
+      if (cartElement.classList.contains("swp-cart-is-open")) {
+        dispatch({ type: "TOGGLE_CART", payload: false })
+        return
+      } else {
+        return
+      }
     }
   }
 
@@ -148,6 +159,7 @@ function useCartToggle(dispatch) {
       document.addEventListener("touchstart", clickEvent)
     } else {
       document.addEventListener("mousedown", clickEvent)
+
       document.addEventListener("keydown", escEvent)
     }
 
