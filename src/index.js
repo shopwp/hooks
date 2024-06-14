@@ -4,20 +4,17 @@ function useAction(hookName, defaultVal = null, customNamespace = "") {
   const { useState, useEffect } = wp.element
   const { hasAction, addAction } = wp.hooks
   const [data, setData] = useState(() => defaultVal)
+  const namespace = "shopwp." + hookName + customNamespace
 
   useEffect(() => {
-    if (!hasAction(hookName, "shopwp." + hookName + customNamespace)) {
-      addAction(
-        hookName,
-        "shopwp." + hookName + customNamespace,
-        function (newData, extraData) {
-          if (extraData) {
-            setData([newData, extraData])
-          } else {
-            setData(newData)
-          }
+    if (!hasAction(hookName, namespace)) {
+      addAction(hookName, namespace, function (newData, extraData) {
+        if (extraData) {
+          setData([newData, extraData])
+        } else {
+          setData(newData)
         }
-      )
+      })
     }
   }, [])
 
